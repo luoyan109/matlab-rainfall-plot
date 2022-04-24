@@ -23,8 +23,17 @@ ylabel('雨量 mm');	% y 軸的說明文字
 1.Error using bar : Not enough input arguments.<br>
 沒有足夠的輸入參數。<br>
 2.Error using bar : Input arguments must be numeric, datetime, duration or categorical.<br>
-輸入參數必須是數字、日期時間、持續時間或分類。
+輸入參數必須是數字、日期時間、持續時間或分類。</p>
+### solution: 因表格中的資料為"字串"，因此必須使用str2num()，將字串轉為"數值"
+* str2num()  = 字串轉數值 ，2=to
+* num2str()  = 數值轉字串
 
+```
+for i=1:24;
+    data3(i)=str2num(Target_Weathers.Data{i,11});   % 將data表格中的文字轉為數值
+end
+```
+--------
 ### after debug:
 ```
 clear;clc;close all
