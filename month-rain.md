@@ -17,8 +17,8 @@ for i_datenumber=datenum(start_date_str):datenum(end_date_str)
         mat_file_name=[date_str,'_',station_id,'.mat'];
         if (exist(mat_file_name,'file')==2)
             index=index+1;
-            Target_Weathers.OneDay.Data(index,1)=i_datenumber;
-            Target_Weathers.OneDay.Data(index,2)=i_datenumber-1/24/60;
+            Target_Weathers.Data(index,1)=i_datenumber;
+            Target_Weathers.Data(index,2)=i_datenumber-1/24/60;
             temp_data=load(mat_file_name);
             
             % 雨量
@@ -27,29 +27,35 @@ for i_datenumber=datenum(start_date_str):datenum(end_date_str)
             temp_data2=str2double(temp_data2);
             % 如果24小時有8小時都NaN就當作整天NaN，如果8小時以下就拿有數值的算總和
             if (sum(isnan(temp_data2)) >= 8)
-                Target_Weathers.OneDay.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;
+                Target_Weathers.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;
             elseif (length(temp_data2) == 24)
                 temp_data2(isnan(temp_data2))=[];
                 %disp(length(temp_data2))
                 if ~isempty(temp_data2)
-                    Target_Weathers.OneDay.Data(i_datenumber-datenum(start_date_str)+1,3)=sum(temp_data2);
+                    Target_Weathers.Data(i_datenumber-datenum(start_date_str)+1,3)=sum(temp_data2);
                 else
-                    Target_Weathers.OneDay.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;  
+                    Target_Weathers.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;  
                 end
             else
-                Target_Weathers.OneDay.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;            
+                Target_Weathers.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;            
             end
 
         end
 end
-Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
+
+Target_Weathers.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
+
 figname=[station_id,'測站']
 figure('NumberTitle', 'off', 'Name',figname);
 x=1:31;
-bar(Target_Weathers.OneDay.Data);
+bar(Target_Weathers.Data);
 set(gca,'XTick',1:1:31);
 xlabel('時間 hr');	% x 軸的說明文字
 ylabel('雨量 mm');	% y 軸的說明文字
+
 ```
 ### bug:
-1.Reference to non-existent field 'Data'.
+1.Reference to non-existent field 'Data'.<br>引用不存在的字段“數據”<br>
+solution:路徑問題，程式需與檔案放在同一路徑
+2.繪圖錯誤:只取到同一天的資料，重複繪製
+
