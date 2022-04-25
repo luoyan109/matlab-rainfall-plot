@@ -51,3 +51,5 @@ set(gca,'XTick',1:1:31);
 xlabel('時間 hr');	% x 軸的說明文字
 ylabel('雨量 mm');	% y 軸的說明文字
 ```
+### bug:
+1.Reference to non-existent field 'Data'.
