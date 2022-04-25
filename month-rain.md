@@ -43,12 +43,12 @@ for i_datenumber=datenum(start_date_str):datenum(end_date_str)
         end
 end
 
-Target_Weathers.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
 
 figname=[station_id,'測站']
 figure('NumberTitle', 'off', 'Name',figname);
 x=1:31;
 bar(Target_Weathers.Data);
+title('日累積降水量(mm)')
 set(gca,'XTick',1:1:31);
 xlabel('時間 day');	% x 軸的說明文字
 ylabel('雨量 mm');	% y 軸的說明文字
