@@ -20,9 +20,28 @@ ylabel('雨量 mm');	% y 軸的說明文字
 ```
 ### bug:<br>
 
-1.Error using bar : Not enough input arguments.<br>
+### 1.Error using bar : Not enough input arguments.<br>
 沒有足夠的輸入參數。<br>
-2.Error using bar : Input arguments must be numeric, datetime, duration or categorical.<br>
+### solution:
+(1) 檔案匯入錯誤，需確認檔案(.mat)匯入後的名稱，例如匯入後，變成取.Weather檔中的Data表格繪製
+
+```
+filename='20210107_C0C700.mat'; 
+r_data=load(filename);      % 將2021/01/07.mat匯入matlab
+Target_Weathers=r_data.Weather; 
+bar(Target_Weathers.Data(:,11)
+```
+<p><br><p>
+
+(2) 表格中的'T'字無法繪製導致參數不足，因此需要將表格中的'T'替換為'0.0'
+* 使用strrep()函數，strrep(被替換者所在資料,被替換者,替換者)
+
+```
+arget_Weathers.Data=strrep(Target_Weathers.Data,'T','0.0'); % 將data表格中的"T"替換成0.0
+```
+<p><br><p>
+    
+### 2.Error using bar : Input arguments must be numeric, datetime, duration or categorical.<br>
 輸入參數必須是數字、日期時間、持續時間或分類。</p>
 ### solution: 因表格中的資料為"字串"，因此必須使用str2num()，將字串轉為"數值"
 * str2num()  = 字串轉數值 ，2=to
