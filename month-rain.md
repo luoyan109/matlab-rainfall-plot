@@ -60,3 +60,6 @@ ylabel('雨量 mm');	% y 軸的說明文字
 2.繪圖錯誤:只取到同一天的資料，重複繪製
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/error1.PNG' width="50%" height="50%"></p>
 
+## solution:
+
+
