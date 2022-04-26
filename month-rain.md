@@ -53,6 +53,11 @@ station_name='中壢';
 target_year='2021';
 start_date_str=[target_year,'-01-01'];
 end_date_str=[target_year,'-01-31'];
+
+Target_Weathers.StationID=station_id;
+Target_Weathers.StationName=station_name;
+Target_Weathers.DateFrom=start_date_str;
+Target_Weathers.DateTo=end_date_str;
 index=0;
 
 for i_datenumber=datenum(start_date_str):datenum(end_date_str)
@@ -62,7 +67,6 @@ for i_datenumber=datenum(start_date_str):datenum(end_date_str)
         if (exist(mat_file_name,'file')==2)
             index=index+1;
             Target_Weathers.Data(index,1)=i_datenumber;
-            Target_Weathers.Data(index,2)=i_datenumber-1/24/60;
             temp_data=load(mat_file_name);
             
             % 雨量
