@@ -12,7 +12,6 @@ start_date_str=[target_year,'-01-07'];
 end_date_str=[target_year,'-01-07'];
 
 i_datenumber=datenum(start_date_str):datenum(end_date_str)
-datenumber=datenum(start_date_str):datenum(end_date_str)
 date_str=datestr(i_datenumber,'yyyymmdd');
 mat_file_name=[date_str,'_',station_id,'.mat'];
 temp_data=load(mat_file_name);
