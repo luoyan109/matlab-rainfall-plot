@@ -95,7 +95,7 @@ ylabel('雨量 mm');	% y 軸的說明文字
 1.Reference to non-existent field 'Data'.<br>
 引用不存在的字段“數據”<br>
 ### solution:路徑問題，程式需與檔案放在同一路徑</p>
-2.繪圖錯誤:只取到同一天的資料，重複繪製
+2.繪圖錯誤:只取到同一天的資料、重複繪製
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/error1.PNG' width="50%" height="50%"></p>
 
 ### solution:
