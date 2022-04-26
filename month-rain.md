@@ -118,7 +118,8 @@ station_name='中壢';
 target_year='2021';
 start_date_str=[target_year,'-01-01'];
 end_date_str=[target_year,'-01-31'];
-    
+Target_Weathers.DateFrom=start_date_str;
+Target_Weathers.DateTo=end_date_str;       
 index=0;
 
 Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
@@ -140,7 +141,6 @@ for i_datenumber=datenum(start_date_str):datenum(end_date_str)
                 Target_Weathers.OneDay.Data(i_datenumber-datenum(start_date_str)+1,3)=NaN;
             elseif (length(temp_data2) == 24)
                 temp_data2(isnan(temp_data2))=[];
-                %disp(length(temp_data2))
                 if ~isempty(temp_data2)
                     Target_Weathers.OneDay.Data(i_datenumber-datenum(start_date_str)+1,3)=sum(temp_data2);
                 else
