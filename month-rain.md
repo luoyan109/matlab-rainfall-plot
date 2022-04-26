@@ -35,6 +35,13 @@ ylabel('雨量 mm');	% y 軸的說明文字
 ### result:
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/one_day_sum.PNG' width="40%" height="40%"></p>
 
+#### 補充: 以下程式碼可改寫成`s_num=sum(temp_data2)`
+```
+for i =1:24
+    index=index+temp_data2(i,1)
+end
+```
+
 -----------
 
 ## * 2021/01/01 - 2021/01/31  rainfall-month-plot
