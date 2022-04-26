@@ -189,3 +189,6 @@ ylabel('雨量 mm');	% y 軸的說明文字
 
 ```
 ### result:
+
+<p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/month-plot.PNG' width="50%" height="50%"></p>
+
