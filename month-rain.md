@@ -106,6 +106,27 @@ ylabel('雨量 mm');	% y 軸的說明文字
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/error1.PNG' width="50%" height="50%"></p>
 
 ### solution:
+若使用原表格Target_Weather.Data去繪製，for迴圈會覆蓋掉前面的資料，且長條圖(bar)只取到第一天的資訊。<br>
+* 因此必須設置新表格:Target_Weather.OneDay.Data
+```
+Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
+```
+* 並增加兩個新的for迴圈:<br>
+
+(1) 檔案放置改為Target_Weather.OneDay.Data;:
+```
+ if (exist(mat_file_name,'file')==2)
+            index=index+1;
+            Target_Weather.OneDay.Data(index,1)=i_datenumber;
+            temp_data=load(mat_file_name);
+```
+(2) 設置變數為B(j)，將sum好的檔案(1/1~1/31)依序放進放進此變數，用以繪製長條圖。
+
+```
+ for j = 1:31
+            B(j) = Target_Weathers.OneDay.Data(j,3);
+        end
+```
 
 
 ### after debug:
@@ -127,6 +148,7 @@ Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降
 for i_datenumber=datenum(start_date_str):datenum(end_date_str)
         date_str=datestr(i_datenumber,'yyyymmdd');
         mat_file_name=[station_id,'\',target_year,'\',date_str(5:6),'\',date_str,'_',station_id,'.mat'];
+        
         if (exist(mat_file_name,'file')==2)
             index=index+1;
             Target_Weather.OneDay.Data(index,1)=i_datenumber;
