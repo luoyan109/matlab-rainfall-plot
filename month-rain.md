@@ -54,10 +54,6 @@ target_year='2021';
 start_date_str=[target_year,'-01-01'];
 end_date_str=[target_year,'-01-31'];
 
-Target_Weathers.StationID=station_id;
-Target_Weathers.StationName=station_name;
-Target_Weathers.DateFrom=start_date_str;
-Target_Weathers.DateTo=end_date_str;
 index=0;
 
 for i_datenumber=datenum(start_date_str):datenum(end_date_str)
@@ -110,11 +106,12 @@ ylabel('雨量 mm');	% y 軸的說明文字
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/error1.PNG' width="50%" height="50%"></p>
 
 ### solution:
-for 迴圈問題，目前正嘗試解決
+
 
 ### after debug:
 
 ```
+
 clear;clc;close all
 station_id='C0C700';
 station_name='中壢';
@@ -122,10 +119,6 @@ target_year='2021';
 start_date_str=[target_year,'-01-01'];
 end_date_str=[target_year,'-01-31'];
     
-Target_Weathers.StationID=station_id;
-Target_Weathers.StationName=station_name;
-Target_Weathers.DateFrom=start_date_str;
-Target_Weathers.DateTo=end_date_str;
 index=0;
 
 Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降水量(mm)'};
@@ -158,11 +151,6 @@ for i_datenumber=datenum(start_date_str):datenum(end_date_str)
             end
 
         end
-        
-
-        temp_date_tick = datenum([
-        ['2021-01-',date_str(5:6)]
-        ],'yyyy-mm-dd');
 end
         for j = 1:31
             B(j) = Target_Weathers.OneDay.Data(j,3);
@@ -176,4 +164,5 @@ title('日累積降水量(mm)')
 set(gca,'XTick',1:1:31);
 xlabel('時間 (天)');	% x 軸的說明文字
 ylabel('雨量 mm');	% y 軸的說明文字
+
 ```
