@@ -117,7 +117,13 @@ Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降
 ### after debug:
 
 ```
-
+%--------------------------------------------------------------------------
+%   Name:month_plot  
+%   Author: 羅子妍
+%   Version: v20220505a
+%   Description: 繪製月雨量長條圖
+%   Advisor:陳建志教授
+%--------------------------------------------------------------------------
 
 clear;clc;close all
 station_id='C0C700';
