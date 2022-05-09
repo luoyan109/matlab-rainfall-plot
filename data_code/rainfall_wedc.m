@@ -38,7 +38,7 @@ target_end_date_str='2021-12-31';
             % 取出<tr class="second_tr"> ~ </tr>
            
             % 找開頭
-            temp_str='<tr class="first_tr">';
+            temp_str='<tr class="second_tr">';
             temp_start_index=strfind(temp_char,temp_str);
             % 去掉前面的
             temp_char=temp_char(temp_start_index(1):end);
@@ -70,10 +70,10 @@ target_end_date_str='2021-12-31';
                 Weather.DataHeader{1,i}=temp_str;
             end
            
-            % 取出<tr class="second_tr"> ~ </tr>
+            % 取出<tr class="third_tr"> ~ </tr>
             
             % 找開頭
-            temp_str='<tr class="second_tr">';
+            temp_str='<tr class="third_tr">';
             temp_start_index=strfind(temp_char,temp_str);
             % 去掉前面的
             temp_char=temp_char(temp_start_index(1):end);
