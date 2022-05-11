@@ -1,8 +1,5 @@
-# matlab plot -- hourly rainfall<p>
-
-繪製一天之內24小時，每小時各自累計之雨量，依水利所告示，0:01~01:00此區間之累計雨量，定義為1時之累計時雨量，並以此區間類推。
+# matlab plot -- hourly rainfall
 ### * 2021/01/07 rainfall-data-plot
-
 ### code before debug :
 ```clear;clc;close all
 filename='20210107_C0C700.mat'; 
@@ -85,4 +82,8 @@ ylabel('雨量 mm');	% y 軸的說明文字
 ```
 
 ### result:
+
 <p><img src="https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/2021-01-07.PNG" width=500px></p>
+
+繪製一天之內24小時，每小時各自累計之雨量。依水利所文件公告，00:01-01:00此區間累計雨量，定義為1時之累計時雨量;01:01-02:00此區間累計雨量，定義為2時之累計時雨量，以此類推。
+
