@@ -7,8 +7,8 @@ clear;clc;close all
 station_id='C0C700';
 station_name='中壢';
 target_year='2021';
-start_date_str=[target_year,'-12-01'];
-end_date_str=[target_year,'-12-31'];
+start_date_str=[target_year,'-01-01'];
+end_date_str=[target_year,'-01-31'];
 Target_Weathers.DateFrom=start_date_str;
 Target_Weathers.DateTo=end_date_str;       
 
@@ -46,7 +46,7 @@ One_Month_sum=sum(OneDay_rainfall_sum) % 選定一個月份，將其中所有的
 
 ```
 
-### demo-month-plot:
+### * demo-month-plot:
 
 ```
 clear;clc;close all
