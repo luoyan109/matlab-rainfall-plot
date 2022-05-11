@@ -45,8 +45,11 @@ end
 One_Month_sum=sum(OneDay_rainfall_sum) % 選定一個月份，將其中所有的"日雨量"加總，計算每月份的"月"雨量累計。
 
 ```
+-----------
 
 ### * demo-month-plot:
+
+將1~12月其內日雨量各自做加總後(利用上方程式)，得到每月累計雨量，手動紀錄下來，接著輸入進矩陣，用以繪製長條圖。<br>
 
 ```
 clear;clc;close all
@@ -82,3 +85,7 @@ saveas(gcf,'month.png','png');
 ### result:
 
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/month.png' width="75%" height="75%"></p>
+
+#### 問題1:不知該如何將月份加總好的內容，直接利用程式記錄在新的表格中?
+#### 問題2:可否利用迴圈寫出能夠讓1月至12月各自加總，並繪製的程式?
+
