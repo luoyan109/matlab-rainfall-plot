@@ -79,3 +79,6 @@ ylabel('降水量(mm)');	% y 軸的說明文字
 % 存圖
 saveas(gcf,'month.png','png');
 ```
+### result:
+
+<p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/month.png' width="75%" height="75%"></p>
