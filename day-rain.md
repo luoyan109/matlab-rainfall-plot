@@ -1,5 +1,4 @@
-# matlab-rainfall-plot
-# Month rainfall:
+# matlab plot -- Day rainfall
 
 ### * demo code: just for oneday-sum 2021/01/07 
 
@@ -44,7 +43,7 @@ end
 
 -----------
 
-## * 2021/01/01 - 2021/01/31  rainfall-month-plot
+## * 2021/01/01 - 2021/01/31  rainfall-day-plot
 ### code before debug :
 ```
 clear;clc;close all
@@ -121,7 +120,7 @@ Target_Weathers.OneDay.DataHeader={'DayNumber_From','DayNumber_To','日累積降
 %   Name:month_plot  
 %   Author: 羅子妍
 %   Version: v20220505a
-%   Description: 繪製月雨量長條圖
+%   Description: 繪製日雨量長條圖
 %   Advisor:陳建志教授
 %--------------------------------------------------------------------------
 
