@@ -1,5 +1,6 @@
 # matlab plot -- year rainfall
 ### * 2011-2020 rainfall-data-plot
+因中壢測站(C0C48)年報表缺少資訊較多，因此改成使用桃園測站(C0C480)進行繪製。
 ### code : 
 
 ```
