@@ -21,7 +21,7 @@ Target_Weathers.OneYear.DataHeader={'年累積降水量(mm)'};
 
 for i_datenumber=start_date:end_date
     date_str=num2str(i_datenumber)
-    mat_file_name=[station_id,'\','10_year_data','\',date_str,'_',station_id,'.mat'];
+    mat_file_name=[station_id,'\','year_data','\',date_str,'_',station_id,'.mat'];
     temp_data=load(mat_file_name);
     
     % 雨量
