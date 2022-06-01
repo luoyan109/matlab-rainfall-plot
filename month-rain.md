@@ -47,7 +47,7 @@ One_Month_sum=sum(OneDay_rainfall_sum) % 選定一個月份，將其中所有的
 ```
 -----------
 
-### 方法一、手動紀錄 
+### 方法一、手動紀錄 :
 
 ### * demo-month-plot:
 
