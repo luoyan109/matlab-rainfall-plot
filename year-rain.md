@@ -1,6 +1,6 @@
 # matlab plot -- year rainfall
 ### * 2011-2020 rainfall-data-plot
-### * code : 
+### code : 
 
 ```
 %--------------------------------------------------------------------------
@@ -59,7 +59,7 @@ ylabel('雨量 mm');	% y 軸的說明文字
 saveas(gcf,[num2str(start_date),'_',num2str(end_date)],'png'); %儲存長條圖繪製結果為圖檔(.png)
 ```
 
-### * result:
+### result:
 
 <p align="left"><img src='https://raw.githubusercontent.com/luoyan109/matlab-rainfall-plot/main/plot%20image/2011_2020.png' width="50%" height="50%"></p>
 
